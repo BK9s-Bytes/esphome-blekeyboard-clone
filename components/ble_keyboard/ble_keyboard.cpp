@@ -106,10 +106,17 @@ void Esp32BleKeyboard::press(MediaKeyReport key, bool with_timer) {
   }
 }
 
-void Esp32BleKeyboard::release() {
-  if (this->is_connected()) {
+void Esp32BleKeyboard::release(uint8_t key) {
+  if(this->is_connected()) {
     this->cancel_timeout((const std::string) TAG);
-    bleKeyboard.releaseAll();
+    bleKeyboard.release(key);
+  }
+}
+
+void Esp32BleKeyboard::release(MediaKeyReport key) {
+  if(this->is_connected()) {
+    this->cancel_timeout((const std::string) TAG);
+    bleKeyboard.release(key);
   }
 }
 }  // namespace ble_keyboard
