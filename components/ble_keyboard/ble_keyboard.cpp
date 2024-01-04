@@ -90,6 +90,8 @@ void Esp32BleKeyboard::press(uint8_t key, bool with_timer) {
     }
 
     bleKeyboard.press(key);
+	  delay(100);
+    bleKeyboard.release(key);
   }
 }
 
