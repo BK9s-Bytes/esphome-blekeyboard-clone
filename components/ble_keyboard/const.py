@@ -146,7 +146,7 @@ BUTTONS_KEY: Final = [
         CONF_NAME: "Space",
         CONF_ID: "key_space",
         CONF_ICON: "mdi:keyboard-space",
-        CONF_VALUE: " ",
+        CONF_VALUE: 0x66,
         CONF_DISABLED_BY_DEFAULT: False,
     },
     {
